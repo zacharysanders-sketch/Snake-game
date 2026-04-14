@@ -1,12 +1,3 @@
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-const scale = 20;
-const rows = canvas.height / scale;
-const columns = canvas.width / scale;
-
-let snake;
-let fruit;
-
 (function setup() {
     snake = new Snake();
     fruit = new Fruit();
@@ -17,16 +8,15 @@ let fruit;
         fruit.draw();
         snake.update();
         snake.draw();
-
         if (snake.eat(fruit)) {
             fruit.pickLocation();
         }
-
-        document.getElementById("score").innerText = snake.total;
-    }, 120);
+        snake.checkCollision();  
+        document.querySelector('#score').innerText = snake.total;
+    }, 250);
 }());
 
-window.addEventListener("keydown", e => {
-    const direction = e.key.replace("Arrow", "");
+window.addEventListener('keydown', ((evt) => {
+    const direction = evt.key.replace('Arrow', '');
     snake.changeDirection(direction);
-});
+}));
