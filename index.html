@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        body {
+            background: #ffffff;
+            color: #1b7431;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        canvas {
+            border: 2px solid #000000;
+            background: #ffffff;
+        }
+        .score {
+            font-size: 28px;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Snake Game</h1>
+    <div class="score">Score: <span id="score">0</span></div>
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <script src="draw.js"></script>
+    <script src="fruit.js"></script>
+    <script src="snake.js"></script>
+</body>
+</html>
